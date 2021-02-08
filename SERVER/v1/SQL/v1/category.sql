@@ -1,0 +1,4 @@
+CREATE TABLE category(
+cid INT PRIMARY KEY AUTO_INCREMENT NOT NULL COMMENT '主键ID自增且唯一',
+category_name VARCHAR(30) NOT NULL UNIQUE COMMENT '名称，且唯一'
+)engine=InnoDB DEFAULT charset=utf8;
