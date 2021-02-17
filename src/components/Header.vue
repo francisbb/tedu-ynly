@@ -3,14 +3,14 @@
     <div class="container-box">
       <div class="navbar" v-if="show==false">
         <div class="branding">
-          <a class="logo" href=""
+          <a class="logo" href="/"
             ><img src="/img/logo/logo.jpg" alt="云南旅游网"
           /></a>
         </div>
         <nav class="main-menu">
           <ul>
             <li>
-              <a href="">首页</a>
+              <a href="/">首页</a>
             </li>
             <li>
               <a href="yngl.html">云南旅游攻略</a>
@@ -72,7 +72,7 @@
             </a>
           </div>
           <div class="main-nav">
-            <a class="" href="login.html" rel="nofollow"
+            <a class="" href="/ucenter" rel="nofollow"
               ><i class="el-icon-user"></i> 登录</a
             >
           </div>

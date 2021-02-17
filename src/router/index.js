@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/Index.vue'
+import Ucenter from '../views/Ucenter.vue'
 
 Vue.use(VueRouter)
 
@@ -8,6 +9,10 @@ const routes = [
   {
     path: '/',
     component: Index
+  },
+  {
+    path: '/ucenter',
+    component: Ucenter
   },
   // {
   //   path: '/about',
