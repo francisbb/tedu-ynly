@@ -13,55 +13,40 @@
               <a href="/">首页</a>
             </li>
             <li>
-              <a href="yngl.html">云南旅游攻略</a>
+              <a href="">云南旅游攻略</a>
+            </li>
+            <li>
+              <a>云南旅游景点</a>
               <i class="el-icon-arrow-down"></i>
               <ul class="sub-menu">
                 <li>
-                  <a href="zjy.html">去云南旅游</a>
+                  <a href="">昆明旅游景点</a>
                 </li>
                 <li>
-                  <a href="ynxl.html">云南旅游线路</a>
+                  <a href="">丽江旅游景点</a>
+                </li>
+                <li>
+                  <a href="">大理旅游景点</a>
+                </li>
+                <li>
+                  <a href="">腾冲旅游景点</a>
+                </li>
+                <li>
+                  <a href="">西双版纳旅游</a>
+                </li>
+                <li>
+                  <a href="">香格里拉旅游</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="ynjd.html">云南旅游景点</a>
-              <i class="el-icon-arrow-down"></i>
-              <ul class="sub-menu">
-                <li>
-                  <a href="km.html">昆明旅游景点</a>
-                </li>
-                <li>
-                  <a href="lijiang.html">丽江旅游景点</a>
-                </li>
-                <li>
-                  <a href="dali.html">大理旅游景点</a>
-                </li>
-                <li>
-                  <a href="tcly.html">腾冲旅游景点</a>
-                </li>
-                <li>
-                  <a href="xsbn.html">西双版纳旅游</a>
-                </li>
-                <li>
-                  <a href="xgll.html">香格里拉旅游</a>
-                </li>
-              </ul>
+              <a href="">云南美食</a>
             </li>
             <li>
-              <a href="meishi.html">云南美食</a>
+              <a href="">周边景点</a>
             </li>
             <li>
-              <a href="zbjd.html">周边景点</a>
-            </li>
-            <li>
-              <a href="topic.html">旅游问答</a>
-            </li>
-            <li>
-              <a href="youji.html">达人游记</a>
-            </li>
-            <li>
-              <a href="tag.html">旅游标签</a>
+              <a href="">达人游记</a>
             </li>
           </ul>
         </nav>

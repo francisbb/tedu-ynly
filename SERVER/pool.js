@@ -7,10 +7,10 @@ const mysql=require('mysql');
 // 创建一个pool对象
 const pool=mysql.createPool({
 	host:'212.64.79.16',
-	user:'root',
-	password:'xiaofei.org',
+	user:'ynly',
+	password:'code.org',
 	port:32768,
-	database:'levis',
+	database:'ynly',
 	connectionLimit:20,
 	charset:'utf8'
 });

@@ -17,33 +17,33 @@
             <h5>用户中心</h5>
             <ul>
               <li>
-                <a @click="tab(1)" :class="tab_i==1?'active':''"
+                <a @click="tab(1)" :class="tab_i == 1 ? 'active' : ''"
                   ><span class="iconfont icon-ykq_tab_tougao"></span>
                   文章投稿</a
                 >
               </li>
               <li>
-                <a @click="tab(2)" :class="tab_i==2?'active':''"
+                <a @click="tab(2)" :class="tab_i == 2 ? 'active' : ''"
                   ><span class="iconfont icon-wenzhang"></span> 我的文章</a
                 >
               </li>
               <li>
-                <a @click="tab(3)" :class="tab_i==3?'active':''"
+                <a @click="tab(3)" :class="tab_i == 3 ? 'active' : ''"
                   ><span class="iconfont icon-collection"></span> 我的收藏</a
                 >
               </li>
               <li>
-                <a @click="tab(4)" :class="tab_i==4?'active':''"
+                <a @click="tab(4)" :class="tab_i == 4 ? 'active' : ''"
                   ><span class="iconfont icon-pinglun"></span> 我的评论</a
                 >
               </li>
               <li>
-                <a @click="tab(5)" :class="tab_i==5?'active':''"
+                <a @click="tab(5)" :class="tab_i == 5 ? 'active' : ''"
                   ><span class="iconfont icon-zhanghaoxinxi"></span> 账号信息</a
                 >
               </li>
               <li>
-                <a @click="tab(6)" :class="tab_i==6?'active':''"
+                <a @click="tab(6)" :class="tab_i == 6 ? 'active' : ''"
                   ><span class="iconfont icon-xiugaimima"></span> 修改密码</a
                 >
               </li>
@@ -56,16 +56,54 @@
         <el-col :span="18">
           <div class="user-panels">
             <!-- article-post start -->
-            <div class="article-post" v-if="tab_i == 1">
+            <div class="article-post" v-show="tab_i == 1">
               <div class="common-title">
                 <h3>文章投稿</h3>
               </div>
-              <div class="article-editor">editor</div>
+              <div class="article-editor">
+                <input name="post_title" class="article-title" type="text" placeholder="请输入文章标题..." value="">
+                <div id="editor1"></div>
+                <!-- <h3>内容预览</h3>
+                <textarea
+                  name=""
+                  id=""
+                  cols="170"
+                  rows="20"
+                  readonly
+                  v-model="editorData"
+                ></textarea> -->
+                <div class="content-editor">
+                  <div class="category">
+                    <b>选择文章分类</b>
+                    <div class="package">
+                      <select name="article-cate" title="请选择所属分类">
+                        <option value="0">未分类</option>
+                        <option value="1">丽江旅游景点</option>
+                        <option value="2">云南周边景点</option>
+                        <option value="3">云南旅游攻略</option>
+                        <option value="4">云南旅游景点</option>
+                        <option value="5">云南旅游线路</option>
+                        <option value="6">云南旅游美食</option>
+                        <option value="7">去云南旅游</option>
+                        <option value="8">大理旅游景点</option>
+                        <option value="9">昆明旅游景点</option>
+                        <option value="10">腾冲旅游景点</option>
+                        <option value="11">西双版纳旅游</option>
+                        <option value="12">达人游记</option>
+                        <option value="13">香格里拉旅游</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="tijiao">
+                  <input type="submit" name="submit" value="提交文章" />
+                </div>
+              </div>
             </div>
             <!-- article-post over -->
 
             <!-- my-article start -->
-            <div class="my-article" v-else-if="tab_i == 2">
+            <div class="my-article" v-show="tab_i == 2">
               <div class="common-title">
                 <h3>我的文章</h3>
               </div>
@@ -121,7 +159,7 @@
             <!-- my-article over -->
 
             <!-- my-favorite start -->
-            <div class="my-favorite" v-else-if="tab_i == 3">
+            <div class="my-favorite" v-show="tab_i == 3">
               <div class="common-title">
                 <h3>我的收藏</h3>
               </div>
@@ -177,7 +215,7 @@
             <!-- my-favorite over -->
 
             <!-- comment start -->
-            <div class="comment" v-else-if="tab_i == 4">
+            <div class="comment" v-show="tab_i == 4">
               <div class="common-title">
                 <h3>我的评论</h3>
               </div>
@@ -211,7 +249,7 @@
             <!-- comment over -->
 
             <!-- userinfo start -->
-            <div class="userinfo" v-else-if="tab_i == 5">
+            <div class="userinfo" v-show="tab_i == 5">
               <div class="common-title">
                 <h3>账号信息</h3>
               </div>
@@ -278,7 +316,7 @@
             <!-- userinfo over -->
 
             <!-- changepw start -->
-            <div class="changepw" v-else-if="tab_i == 6">
+            <div class="changepw" v-show="tab_i == 6">
               <div class="common-title">
                 <h3>账号信息</h3>
               </div>
@@ -319,16 +357,37 @@
 </template>
 
 <script>
+import wangEditor from "wangeditor";
 export default {
   data() {
     return {
       tab_i: 1, //选项卡参数
+      editor: null, //富文本编辑器参数
+      editorData: "",
     };
   },
   methods: {
     tab(i) {
       this.tab_i = i;
     },
+  },
+  mounted() {
+    const editor = new wangEditor(`#editor1`);
+
+    // 配置 onchange 回调函数，将数据同步到 vue 中
+    editor.config.onchange = (newHtml) => {
+      this.editorData = newHtml;
+    };
+
+    // 创建编辑器
+    editor.create();
+
+    this.editor = editor;
+  },
+  beforeDestroy() {
+    // 调用销毁 API 对当前编辑器实例进行销毁
+    this.editor.destroy();
+    this.editor = null;
   },
 };
 </script>
@@ -421,17 +480,16 @@ export default {
 }
 
 .ucenter-main .user-nav > ul li a.active::before {
-    content: "";
-    width: 3px;
-    height: 18px;
-    margin-top: 2px;
-    background: #333;
-    float: left;
-    margin-right: 10px;
+  content: "";
+  width: 3px;
+  height: 18px;
+  margin-top: 2px;
+  background: #333;
+  float: left;
+  margin-right: 10px;
 }
 
-
-.ucenter-main .user-nav > ul li a.active{
+.ucenter-main .user-nav > ul li a.active {
   color: #333;
 }
 
@@ -473,6 +531,47 @@ export default {
 }
 
 /* article-post start*/
+
+.ucenter-main .article-post #editor1 {
+  margin-bottom: 20px;
+}
+
+.ucenter-main .article-post .article-title {
+    appearance: none;
+    border-bottom: 1px solid #e6e6e6;
+    color: #1a1a1a;
+    display: block;
+    height: 40px;
+    line-height: 38px;
+    margin-bottom: 10px;
+    transition: border-color cubic-bezier(.4,.01,.165,.99);
+    width: 100%;
+}
+
+.ucenter-main .article-post .category select {
+  background-color: #fff;
+  border: 1px solid #f4f4f4;
+  color: #1a1a1a;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ucenter-main .article-post .tijiao input {
+  margin-top: 20px;
+  background-color: #111;
+  border: 1px solid #111;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  text-align: center;
+}
 
 /* article-post over*/
 

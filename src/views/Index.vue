@@ -375,7 +375,7 @@ export default {
 /* banner start */
 .index-main .swiper-container {
   width: 100%;
-  height: 550px;
+  height: 450px;
 }
 
 .index-main .swiper-container .slide-item {
