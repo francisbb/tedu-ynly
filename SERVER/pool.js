@@ -98,7 +98,7 @@ function query(
 			sql1=sql1.slice(0,-1);
 			sql=sql1+` FROM ${empt} WHERE `;
 		}else{
-			sql=`SELECT ${property} FROM ${empt} `;
+			sql=`SELECT ${property} FROM ${empt} WHERE `;
 		}
 		// let sql=`SELECT * FROM ${empt} WHERE `;
 		console.log(sql);
