@@ -14,7 +14,6 @@ import 'swiper/dist/css/swiper.min.css';
 
 Vue.use(ElementUI);
 
-
 Vue.config.productionTip = false
 
 

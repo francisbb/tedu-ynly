@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/Index.vue'
 import Ucenter from '../views/Ucenter.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import ArticleDetail from '../views/ArticleDetail.vue'
+import ArticleList from '../views/Article_list.vue'
 
 Vue.use(VueRouter)
 
@@ -13,6 +17,22 @@ const routes = [
   {
     path: '/ucenter',
     component: Ucenter
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/register',
+    component: Register
+  },
+  {
+    path: '/article_detail',
+    component: ArticleDetail
+  },
+  {
+    path: '/article_list',
+    component: ArticleList
   },
   // {
   //   path: '/about',
