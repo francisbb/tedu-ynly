@@ -25,6 +25,6 @@ app.use(bodyParser.urlencoded({
 // 挂载接口模块
 app.use('/user',userRouter);
 app.use('/article',articleRouter);
-app.use('/ucenter',userRouter);
+app.use('/ucenter',ucenterRouter);
 
 

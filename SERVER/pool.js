@@ -7,10 +7,10 @@ const mysql=require('mysql');
 // 创建一个pool对象
 const pool=mysql.createPool({
 	host:'212.64.79.16',
-	user:'ynly',
-	password:'code.org',
+	user:'root',
+	password:'xiaofei.org',
 	port:32768,
-	database:'ynly',
+	database:'YM',
 	connectionLimit:20,
 	charset:'utf8'
 });
@@ -101,7 +101,7 @@ function query(
 			sql=`SELECT ${property} FROM ${empt} WHERE `;
 		}
 		// let sql=`SELECT * FROM ${empt} WHERE `;
-		console.log(sql);
+		// console.log(sql);
 		for(let n in obj){
 			sql+=`${n}='${obj[n]}' and `;
 		}

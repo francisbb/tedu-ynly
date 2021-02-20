@@ -1,6 +1,7 @@
 /*
  用户模块的接口
  具体接口名称请根据文档要求命名
+ 参数名务必和数据库字段名一致！！！
 */
 const express=require('express');
 const pool=require('../pool.js');
