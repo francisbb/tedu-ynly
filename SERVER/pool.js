@@ -5,14 +5,23 @@
 const mysql=require('mysql');
 
 // 创建一个pool对象
-const pool=mysql.createPool({
-	host:'212.64.79.16',
-	user:'ynly',
-	password:'code.org',
-	port:32768,
-	database:'ynly',
-	connectionLimit:20,
-	charset:'utf8'
+// const pool=mysql.createPool({
+// 	host:'212.64.79.16',
+// 	user:'ynly',
+// 	password:'code.org',
+// 	port:32768,
+// 	database:'YM',
+// 	connectionLimit:20,
+// 	charset:'utf8'
+// });
+
+const pool = mysql.createPool({
+	host:'127.0.0.1',
+	port:'3306',
+	user:'root',
+	password:'',
+	database:'ym',
+	connectionLimit:'20'//设置连接池的大小
 });
 
 // 不带条件查询
@@ -51,7 +60,7 @@ function queryAll(
 		}else{
 			sql=`SELECT ${property} FROM ${empt}`;
 		}
-		sql + ' ACS';
+		sql + ' ASC';
 		console.log(sql);
 		pool.query(sql,(err,rs) =>{
 			if(err) throw err;
@@ -98,10 +107,10 @@ function query(
 			sql1=sql1.slice(0,-1);
 			sql=sql1+` FROM ${empt} WHERE `;
 		}else{
-			sql=`SELECT ${property} FROM ${empt} `;
+			sql=`SELECT ${property} FROM ${empt} WHERE `;
 		}
 		// let sql=`SELECT * FROM ${empt} WHERE `;
-		console.log(sql);
+		// console.log(sql);
 		for(let n in obj){
 			sql+=`${n}='${obj[n]}' and `;
 		}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function login(){
+				//0.接收用户输入的信息
+				var _comment_content=comment_content.value;
+				var _created_time=created_time.innerHTML;
+				var _user_id=user_id.value;
+				var _article_id=article_id.value;
+				// var _phone=phone.value;
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						var r=xhr.responseText;
+						d1.innerHTML=r;
+					}
+				}
+				xhr.open("post",`/ucenter/addComment`,true);
+				var formdata=(`comment_content=${_comment_content}&created_time=${_created_time}&user_id=${_user_id}&article_id=${_article_id}`);
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.send(formdata);
+			}
+		</script>
+	</head>
+	<body>
+		<h2>添加评论</h2>
+			评论内容: <input type="text" id="comment_content" placeholder="请输入评论内容" /><br>
+			评论时间: <div id="created_time"></div><br>
+			用户ID: <input type="text" id="user_id" placeholder="请输入用户ID" /><br>
+			文章ID: <input type="text" id="article_id" placeholder="请输入稳扎请ID" /><br>
+			<button onclick="login()">注册</button><br>
+			<div id="d1"></div>
+			<script>
+				var x=new Date().toLocaleDateString();;
+				document.getElementById('created_time').innerHTML=x;
+			</script>
+	</body>
+</html>

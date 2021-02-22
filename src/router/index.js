@@ -27,12 +27,14 @@ const routes = [
     component: Register
   },
   {
-    path: '/article_detail',
-    component: ArticleDetail
+    path: '/article_detail/:id',
+    component: ArticleDetail,
+    props:true
   },
   {
-    path: '/article_list',
-    component: ArticleList
+    path: '/article_list/:id',
+    component: ArticleList,
+    props:true
   },
   // {
   //   path: '/about',

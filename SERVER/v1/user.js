@@ -1,6 +1,7 @@
 /*
  用户模块的接口
  具体接口名称请根据文档要求命名
+ 参数名务必和数据库字段名一致！！！
 */
 const express=require('express');
 const pool=require('../pool.js');
@@ -24,12 +25,12 @@ r.post('/login',(req,res) =>{
     var user=req.body;
     pool.query({
         empt:'user',
-        obj:{uname:user.uname},
+        obj:{uname:user.uname,password:user.password},
         callback(rs){
             if(!rs.length){ // 如果rs.length==0 则为false、取反为true
                 res.send({code:301,msg:'authentication faild'});
             }else{
-                res.send({code:200,msg:'login sucess'}); // 注意：这里可以不带return，因为if-else始终只有一个结果出来
+                res.send({code:200,msg:'login sucess',result:rs}); // 注意：这里可以不带return，因为if-else始终只有一个结果出来
             }
         }
     });

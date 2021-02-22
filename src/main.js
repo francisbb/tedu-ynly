@@ -10,7 +10,10 @@ import '../public/css/common.css'//导入公用样式和重置样式
 import '../public/css/iconfont-3.1.css'//导入iconfont
 import ElementUI from 'element-ui';//导入element-ui
 import 'element-ui/lib/theme-chalk/index.css';//导入element-ui样式
-import 'swiper/dist/css/swiper.min.css';
+import 'swiper/dist/css/swiper.min.css';//导入swiper样式
+
+import qs from 'qs';
+Vue.prototype.qs = qs;
 
 Vue.use(ElementUI);
 

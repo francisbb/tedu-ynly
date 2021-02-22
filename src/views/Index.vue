@@ -1,303 +1,164 @@
 <template>
-  <div class="index-main">
-    <div class="index-banner">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slide-item box1">
-              <div class="banner-content">
-                <h2>免费分享高品质的云南旅游攻略景点大全线路社交自媒体平台</h2>
-                <div>丽江泸沽湖</div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-item box2">
-              <div class="banner-content">
-                <h2>云南旅游网打造“去大众化”的旅行攻略，高品质的旅行生活</h2>
-                <div>香格里拉 松赞林寺</div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-item box3">
-              <div class="banner-content">
-                <h2>去云南自驾游，纯游玩，享受不一样的高品质小众旅游景点</h2>
-                <div>西双版纳</div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-item box4">
-              <div class="banner-content">
-                <h2>重新定义旅行，以“心情+社交+生活+体验”不一样的旅行经历</h2>
-                <div>腾冲银杏村</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-        <!-- 如果需要导航按钮 -->
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
-      </div>
-    </div>
-    <div class="index-content container-box">
-      <div class="category-list">
-        <div class="swiper-container1">
+  <div>
+    <common-header></common-header>
+    <div class="index-main">
+      <div class="index-banner">
+        <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="">
-                <div class="category-box">
-                  <div class="thumbnail-pic">
-                    <div class="big thumbnail">
-                      <img
-                        src="/img/picture/1609211481-西双版纳.jpg"
-                        alt="云南旅游攻略"
-                      />
-                    </div>
-                    <div class="small">
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/41d9515027de1f72156b0d7aa0227cf7.jpg"
-                          alt="云南旅游攻略"
-                        />
-                      </div>
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/1609211542-云南旅游.jpg"
-                          alt="云南旅游攻略"
-                        />
-                        <span>33 篇文章</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry-content">
-                    <h3 class="entry-title">云南旅游攻略</h3>
-                    <a class="arrow" href=""
-                      ><i class="iconfont icon-zhaoyou"></i
-                    ></a>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <div class="category-box">
-                  <div class="thumbnail-pic">
-                    <div class="big thumbnail">
-                      <img
-                        src="/img/picture/1609211481-西双版纳.jpg"
-                        alt="云南旅游攻略"
-                      />
-                    </div>
-                    <div class="small">
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/41d9515027de1f72156b0d7aa0227cf7.jpg"
-                          alt="云南旅游攻略"
-                        />
-                      </div>
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/1609211542-云南旅游.jpg"
-                          alt="云南旅游攻略"
-                        />
-                        <span>33 篇文章</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry-content">
-                    <h3 class="entry-title">云南旅游攻略</h3>
-                    <a class="arrow" href=""
-                      ><i class="iconfont icon-zhaoyou"></i
-                    ></a>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <div class="category-box">
-                  <div class="thumbnail-pic">
-                    <div class="big thumbnail">
-                      <img
-                        src="/img/picture/1609211481-西双版纳.jpg"
-                        alt="云南旅游攻略"
-                      />
-                    </div>
-                    <div class="small">
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/41d9515027de1f72156b0d7aa0227cf7.jpg"
-                          alt="云南旅游攻略"
-                        />
-                      </div>
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/1609211542-云南旅游.jpg"
-                          alt="云南旅游攻略"
-                        />
-                        <span>33 篇文章</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry-content">
-                    <h3 class="entry-title">云南旅游攻略</h3>
-                    <a class="arrow" href=""
-                      ><i class="iconfont icon-zhaoyou"></i
-                    ></a>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <div class="category-box">
-                  <div class="thumbnail-pic">
-                    <div class="big thumbnail">
-                      <img
-                        src="/img/picture/1609211481-西双版纳.jpg"
-                        alt="云南旅游攻略"
-                      />
-                    </div>
-                    <div class="small">
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/41d9515027de1f72156b0d7aa0227cf7.jpg"
-                          alt="云南旅游攻略"
-                        />
-                      </div>
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/1609211542-云南旅游.jpg"
-                          alt="云南旅游攻略"
-                        />
-                        <span>33 篇文章</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry-content">
-                    <h3 class="entry-title">云南旅游攻略</h3>
-                    <a class="arrow" href=""
-                      ><i class="iconfont icon-zhaoyou"></i
-                    ></a>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <div class="category-box">
-                  <div class="thumbnail-pic">
-                    <div class="big thumbnail">
-                      <img
-                        src="/img/picture/1609211481-西双版纳.jpg"
-                        alt="云南旅游攻略"
-                      />
-                    </div>
-                    <div class="small">
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/41d9515027de1f72156b0d7aa0227cf7.jpg"
-                          alt="云南旅游攻略"
-                        />
-                      </div>
-                      <div class="thumbnail">
-                        <img
-                          src="/img/picture/1609211542-云南旅游.jpg"
-                          alt="云南旅游攻略"
-                        />
-                        <span>33 篇文章</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry-content">
-                    <h3 class="entry-title">云南旅游攻略</h3>
-                    <a class="arrow" href=""
-                      ><i class="iconfont icon-zhaoyou"></i
-                    ></a>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <!-- <div class="swiper-pagination1"></div> -->
-        </div>
-      </div>
-      <div class="newest">
-        <div class="news-title">
-          <h3>最新文章</h3>
-        </div>
-        <el-row
-          :gutter="20"
-          class="news-list infinite-list"
-          v-infinite-scroll="load"
-          infinite-scroll-disabled="disabled"
-        >
-          <el-col
-            :span="8"
-            v-for="(v, i) of count"
-            :key="i"
-            class="infinite-list-item"
-          >
-            <a href="">
-              <div class="news-box">
-                <img
-                  src="https://www.ynly.cc/wp-content/uploads/2020/12/1608358701-%E6%A2%85%E9%87%8C%E9%9B%AA%E5%B1%B1.jpg"
-                  alt=""
-                />
-                <div class="news-content">
-                  <span>丽江旅游景点</span>
-                  <h4>
-                    <a href="">2020年云南十大旅游景点排名！云南值得去的地方</a>
-                  </h4>
-                  <div class="author-info">
-                    <img
-                      src="https://www.ynly.cc/wp-content/uploads/2020/10/1603358652-ynlytx.jpg"
-                      alt=""
-                    />
-                    <div>
-                      <p>云南旅游网</p>
-                      <span>2020-11-01</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="news-details">
-                  <div>
-                    <a class="time" href=""
-                      ><i class="iconfont icon-rili"></i
-                      ><span class="count">2020-12-21</span></a
-                    >
-
-                    <a class="view" href=""
-                      ><i class="iconfont icon-icon-test"></i
-                      ><span class="count">92</span></a
-                    >
-
-                    <a class="comment" href=""
-                      ><i class="iconfont icon-pinglun"></i
-                      ><span class="count">0</span></a
-                    >
-                  </div>
+              <div class="slide-item box1">
+                <div class="banner-content">
+                  <h2>
+                    免费分享高品质的云南旅游攻略景点大全线路社交自媒体平台
+                  </h2>
+                  <div>丽江泸沽湖</div>
                 </div>
               </div>
-            </a>
-          </el-col>
-        </el-row>
-        <div class="infinite-scroll-button" v-if="loading">
-          <p>
-            <i class="iconfont icon-shuaxin"></i>
-            加载更多
-          </p>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-item box2">
+                <div class="banner-content">
+                  <h2>云南旅游网打造“去大众化”的旅行攻略，高品质的旅行生活</h2>
+                  <div>香格里拉 松赞林寺</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-item box3">
+                <div class="banner-content">
+                  <h2>去云南自驾游，纯游玩，享受不一样的高品质小众旅游景点</h2>
+                  <div>西双版纳</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-item box4">
+                <div class="banner-content">
+                  <h2>重新定义旅行，以“心情+社交+生活+体验”不一样的旅行经历</h2>
+                  <div>腾冲银杏村</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+          <!-- 如果需要导航按钮 -->
+          <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
         </div>
-        <div class="infinite-scroll-button" v-if="noMore">
-          <p>没有更多了</p>
+      </div>
+      <div class="index-content container-box">
+        <div class="category-list">
+          <div class="swiper-container1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(v, i) of category" :key="i">
+                <router-link :to="`/article_list/${v.id}`">
+                  <div class="category-box">
+                    <div class="thumbnail-pic">
+                      <div class="big thumbnail">
+                        <img :src="`/img/picture/${v.img1}`" alt="" />
+                      </div>
+                      <div class="small">
+                        <div class="thumbnail">
+                          <img :src="`/img/picture/${v.img2}`" alt="" />
+                        </div>
+                        <div class="thumbnail">
+                          <img
+                            :src="`/img/picture/${v.img3}`"
+                            alt="云南旅游攻略"
+                          />
+                          <span>{{ v.amount }}篇文章</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="entry-content">
+                      <h3 class="entry-title">{{ v.typename }}</h3>
+                      <a class="arrow" href=""
+                        ><i class="iconfont icon-zhaoyou"></i
+                      ></a>
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination1"></div> -->
+          </div>
+        </div>
+        <div class="newest">
+          <div class="news-title">
+            <h3>最新文章</h3>
+          </div>
+          <el-row
+            :gutter="20"
+            class="news-list infinite-list"
+            v-infinite-scroll="load"
+            infinite-scroll-disabled="loading"
+            infinite-scroll-distance="100"
+          >
+            <el-col
+              :span="8"
+              v-for="(v, i) of articles"
+              :key="i"
+              class="infinite-list-item"
+            >
+              <router-link :to="`/article_detail/${v.aid}`">
+                <div class="news-box">
+                  <img :src="`/img/picture/${v.img}`" alt="" />
+                  <div class="news-content">
+                    <span>{{ v.subtitle }}</span>
+                    <h4>
+                      <router-link :to="`/article_detail/${v.aid}`">
+                        {{ v.title }}
+                      </router-link>
+                    </h4>
+                    <div class="author-info">
+                      <img :src="`/img/ucenter/${v.avater}`" alt="" />
+                      <div>
+                        <p>{{ v.nickname }}</p>
+                        <span>{{
+                          new Date(v.created_at).toLocaleString()
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-details">
+                    <div>
+                      <a class="time" href=""
+                        ><i class="iconfont icon-rili"></i
+                        ><span class="count">{{
+                          new Date(v.created_at).toLocaleString()
+                        }}</span></a
+                      >
+
+                      <a class="view" href=""
+                        ><i class="iconfont icon-icon-test"></i
+                        ><span class="count">{{ v.view }}</span></a
+                      >
+
+                      <a class="comment" href=""
+                        ><i class="iconfont icon-pinglun"></i
+                        ><span class="count">{{ v.comment }}</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </router-link>
+            </el-col>
+          </el-row>
+          <div class="infinite-scroll-button" v-if="loading">
+            <p>
+              <i class="iconfont icon-shuaxin"></i>
+              加载更多
+            </p>
+          </div>
+          <div class="infinite-scroll-button" v-if="noMore">
+            <p>没有更多了</p>
+          </div>
         </div>
       </div>
     </div>
+    <common-footer></common-footer>
   </div>
 </template>
 
@@ -306,28 +167,90 @@ import Swiper from "swiper";
 export default {
   data() {
     return {
-      count: 12,
+      // 存储服务器返回分类数据
+      category: [],
+      // 存储服务器返回的文章数据
+      articles: [],
+
+      //翻页数据
+      page: 1,
       loading: false,
+      pagecount: 1,
     };
   },
   computed: {
     noMore() {
-      return this.count >= 30;
-    },
-    disabled() {
-      return this.loading || this.noMore;
+      return this.page > this.pagecount;
     },
   },
   methods: {
     load() {
-      this.loading = true;
-      setTimeout(() => {
-        this.count += 3;
-        this.loading = false;
-      }, 2000);
+      console.log(this.page,this.pagecount);
+      if (this.page <= this.pagecount) {
+        
+        this.loading = true;
+        // 发送异步请求
+        this.axios
+          .get("/article/newArticle", {
+            params: {
+              page: this.page,
+            },
+          })
+          .then((res) => {
+            // 将服务器返回的页数总数赋值给pagecount变量
+            console.log(res);
+            this.pagecount = res.data.pagecount;
+            //将服务器返回的文章列表数据赋值给results变量
+            let result = res.data.result;
+            console.log(result);
+            result.forEach((item) => {
+              this.articles.push(item);
+            });
+            this.page++;
+            this.loading = false;
+          });
+      }
     },
   },
   mounted() {
+    // 发送HTTP请求以获取期望的文章分类数据
+    this.axios
+      .get("/article/category")
+      .then((res) => {
+        // 将服务器返回的数据赋予category变量
+        console.log(res);
+        this.category = res.data.splice(0, 5);
+      })
+      .then(
+        //首页分类列表轮播swiper
+        function () {
+          if (window.innerWidth >= 1900) {
+            new Swiper(".swiper-container1", {
+              slidesPerView: 5,
+              spaceBetween: 20,
+              // pagination: {
+              //   el: ".swiper-pagination1",
+              //   clickable: true,
+              // },
+              // navigation: {
+              //   nextEl: ".swiper-button-next",
+              //   prevEl: ".swiper-button-prev",
+              // },
+            });
+          } else {
+            new Swiper(".swiper-container1", {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            });
+          }
+        }
+      );
+    // 发送HTTP请求以获取期望的最新文章数据
+    //  this.axios.get("/article/newArticle").then(res=>{
+    //    console.log(res);
+    //    this.articles = res.data;
+    //  });
+
     //首页轮播swiper
     (function () {
       new Swiper(".index-main .swiper-container", {
@@ -343,29 +266,6 @@ export default {
         },
         loop: true,
       });
-    })();
-
-    //首页分类列表轮播swiper
-    (function () {
-      if (window.innerWidth >= 1900) {
-        new Swiper(".swiper-container1", {
-          slidesPerView: 5,
-          spaceBetween: 20,
-          // pagination: {
-          //   el: ".swiper-pagination1",
-          //   clickable: true,
-          // },
-          // navigation: {
-          //   nextEl: ".swiper-button-next",
-          //   prevEl: ".swiper-button-prev",
-          // },
-        });
-      } else {
-        new Swiper(".swiper-container1", {
-          slidesPerView: 4,
-          spaceBetween: 20,
-        });
-      }
     })();
   },
 };
@@ -508,10 +408,6 @@ export default {
 }
 
 .index-main .category-box .thumbnail-pic .thumbnail img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -531,6 +427,33 @@ export default {
   flex-direction: column;
   height: 50%;
   margin-bottom: 4px;
+}
+
+.index-main .category-box .thumbnail-pic .small div:nth-child(2) {
+  position: relative;
+}
+
+.index-main .category-box .thumbnail-pic .small div:nth-child(2)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.index-main .category-box .thumbnail-pic .small div:nth-child(2) span {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 30;
 }
 
 .index-main .category-box .entry-content {
@@ -691,15 +614,15 @@ export default {
 }
 
 .index-main .infinite-scroll-button p {
-    background-color: #333;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 1;
-    padding: 10px 22px;
-    text-align: center;
+  background-color: #333;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 10px 22px;
+  text-align: center;
 }
 /* newest over */
 </style>

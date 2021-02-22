@@ -1,69 +1,78 @@
 <template>
-  <div class="ucenter-main">
-    <div class="ucenter-content container-box">
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="user-header">
-            <div class="user-title">
-              <img
-                src="https://cn.gravatar.com/avatar/7e95f2ffd7c0005c325b48443a80b4c2?s=96"
-                alt=""
-              />
-              <p>用户名</p>
-            </div>
-            <p class="user-intro">这人很懒，没有留言！</p>
-          </div>
-          <div class="user-nav">
-            <h5>用户中心</h5>
-            <ul>
-              <li>
-                <a @click="tab(1)" :class="tab_i == 1 ? 'active' : ''"
-                  ><span class="iconfont icon-ykq_tab_tougao"></span>
-                  文章投稿</a
-                >
-              </li>
-              <li>
-                <a @click="tab(2)" :class="tab_i == 2 ? 'active' : ''"
-                  ><span class="iconfont icon-wenzhang"></span> 我的文章</a
-                >
-              </li>
-              <li>
-                <a @click="tab(3)" :class="tab_i == 3 ? 'active' : ''"
-                  ><span class="iconfont icon-collection"></span> 我的收藏</a
-                >
-              </li>
-              <li>
-                <a @click="tab(4)" :class="tab_i == 4 ? 'active' : ''"
-                  ><span class="iconfont icon-pinglun"></span> 我的评论</a
-                >
-              </li>
-              <li>
-                <a @click="tab(5)" :class="tab_i == 5 ? 'active' : ''"
-                  ><span class="iconfont icon-zhanghaoxinxi"></span> 账号信息</a
-                >
-              </li>
-              <li>
-                <a @click="tab(6)" :class="tab_i == 6 ? 'active' : ''"
-                  ><span class="iconfont icon-xiugaimima"></span> 修改密码</a
-                >
-              </li>
-              <li>
-                <a><span class="iconfont icon-tuichudenglu"></span> 退出登录</a>
-              </li>
-            </ul>
-          </div>
-        </el-col>
-        <el-col :span="18">
-          <div class="user-panels">
-            <!-- article-post start -->
-            <div class="article-post" v-show="tab_i == 1">
-              <div class="common-title">
-                <h3>文章投稿</h3>
+  <div>
+    <common-header></common-header>
+    <div class="ucenter-main">
+      <div class="ucenter-content container-box">
+        <el-row :gutter="20">
+          <el-col :span="6">
+            <div class="user-header">
+              <div class="user-title">
+                <img :src="`/img/ucenter/${avater}`" alt="" />
+                <p>{{ nickname }}</p>
               </div>
-              <div class="article-editor">
-                <input name="post_title" class="article-title" type="text" placeholder="请输入文章标题..." value="">
-                <div id="editor1"></div>
-                <!-- <h3>内容预览</h3>
+              <p class="user-intro">{{ intro }}</p>
+            </div>
+            <div class="user-nav">
+              <h5>用户中心</h5>
+              <ul>
+                <li>
+                  <a @click="tab(1)" :class="tab_i == 1 ? 'active' : ''"
+                    ><span class="iconfont icon-ykq_tab_tougao"></span>
+                    文章投稿</a
+                  >
+                </li>
+                <li>
+                  <a @click="tab(2)" :class="tab_i == 2 ? 'active' : ''"
+                    ><span class="iconfont icon-wenzhang"></span> 我的文章</a
+                  >
+                </li>
+                <li>
+                  <a @click="tab(3)" :class="tab_i == 3 ? 'active' : ''"
+                    ><span class="iconfont icon-collection"></span> 我的收藏</a
+                  >
+                </li>
+                <li>
+                  <a @click="tab(4)" :class="tab_i == 4 ? 'active' : ''"
+                    ><span class="iconfont icon-pinglun"></span> 我的评论</a
+                  >
+                </li>
+                <li>
+                  <a @click="tab(5)" :class="tab_i == 5 ? 'active' : ''"
+                    ><span class="iconfont icon-zhanghaoxinxi"></span>
+                    账号信息</a
+                  >
+                </li>
+                <li>
+                  <a @click="tab(6)" :class="tab_i == 6 ? 'active' : ''"
+                    ><span class="iconfont icon-xiugaimima"></span> 修改密码</a
+                  >
+                </li>
+                <li>
+                  <a @click="logout"
+                    ><span class="iconfont icon-tuichudenglu"></span>
+                    退出登录</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </el-col>
+          <el-col :span="18">
+            <div class="user-panels">
+              <!-- article-post start -->
+              <div class="article-post" v-show="tab_i == 1">
+                <div class="common-title">
+                  <h3>文章投稿</h3>
+                </div>
+                <div class="article-editor">
+                  <input
+                    name="post_title"
+                    class="article-title"
+                    type="text"
+                    placeholder="请输入文章标题..."
+                    value=""
+                  />
+                  <div id="editor1"></div>
+                  <!-- <h3>内容预览</h3>
                 <textarea
                   name=""
                   id=""
@@ -72,287 +81,233 @@
                   readonly
                   v-model="editorData"
                 ></textarea> -->
-                <div class="content-editor">
-                  <div class="category">
-                    <b>选择文章分类</b>
-                    <div class="package">
-                      <select name="article-cate" title="请选择所属分类">
-                        <option value="0">未分类</option>
-                        <option value="1">丽江旅游景点</option>
-                        <option value="2">云南周边景点</option>
-                        <option value="3">云南旅游攻略</option>
-                        <option value="4">云南旅游景点</option>
-                        <option value="5">云南旅游线路</option>
-                        <option value="6">云南旅游美食</option>
-                        <option value="7">去云南旅游</option>
-                        <option value="8">大理旅游景点</option>
-                        <option value="9">昆明旅游景点</option>
-                        <option value="10">腾冲旅游景点</option>
-                        <option value="11">西双版纳旅游</option>
-                        <option value="12">达人游记</option>
-                        <option value="13">香格里拉旅游</option>
-                      </select>
+                  <div class="content-editor">
+                    <div class="category">
+                      <b>选择文章分类</b>
+                      <div class="package">
+                        <select name="article-cate" title="请选择所属分类">
+                          <option value="0">未分类</option>
+                          <option value="1">丽江旅游景点</option>
+                          <option value="2">云南周边景点</option>
+                          <option value="3">云南旅游攻略</option>
+                          <option value="4">云南旅游景点</option>
+                          <option value="5">云南旅游线路</option>
+                          <option value="6">云南旅游美食</option>
+                          <option value="7">去云南旅游</option>
+                          <option value="8">大理旅游景点</option>
+                          <option value="9">昆明旅游景点</option>
+                          <option value="10">腾冲旅游景点</option>
+                          <option value="11">西双版纳旅游</option>
+                          <option value="12">达人游记</option>
+                          <option value="13">香格里拉旅游</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
+                  <div class="tijiao">
+                    <input type="submit" name="submit" value="提交文章" />
+                  </div>
                 </div>
-                <div class="tijiao">
-                  <input type="submit" name="submit" value="提交文章" />
+              </div>
+              <!-- article-post over -->
+
+              <!-- my-article start -->
+              <div class="my-article" v-show="tab_i == 2">
+                <div class="common-title">
+                  <h3>我的文章</h3>
+                </div>
+                <div class="myarticle-list">
+                  <ul>
+                    <li v-for="(v, i) of myArticle" :key="i">
+                      <router-link :to="`/article_detail/${v.aid}`">
+                        <img :src="`/img/picture/${v.img}`" alt="" />
+                        <div>
+                          <p>
+                            <span class="meta-time">{{
+                              new Date(v.created_at).toLocaleString()
+                            }}</span>
+                            <span class="count">{{ v.view }}次浏览</span>
+                            <span class="meta-comment"
+                              >{{ v.comment }}条评论</span
+                            >
+                          </p>
+                          <h4>{{ v.title }}</h4>
+                          <p class="article-txt">
+                            {{ v.subtitle }}
+                          </p>
+                        </div>
+                      </router-link>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <!-- article-post over -->
+              <!-- my-article over -->
 
-            <!-- my-article start -->
-            <div class="my-article" v-show="tab_i == 2">
-              <div class="common-title">
-                <h3>我的文章</h3>
+              <!-- my-favorite start -->
+              <div class="my-favorite" v-show="tab_i == 3">
+                <div class="common-title">
+                  <h3>我的收藏</h3>
+                </div>
+                <div class="myfavorite-list">
+                  <ul>
+                    <li v-for="(v, i) of myFavorite" :key="i">
+                      <router-link :to="`/article_detail/${v.aid}`">
+                        <img :src="`/img/picture/${v.img}`" alt="" />
+                        <div>
+                          <p>
+                            <span class="meta-time">{{
+                              new Date(v.created_at).toLocaleString()
+                            }}</span>
+                            <span class="count">{{ v.view }}次浏览</span>
+                            <span class="meta-comment"
+                              >{{ v.comment }}条评论</span
+                            >
+                          </p>
+                          <h4>{{ v.title }}</h4>
+                          <p class="favorite-txt">
+                            {{ v.subtitle }}
+                          </p>
+                        </div>
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="myarticle-list">
-                <ul>
-                  <li>
-                    <a href="">
-                      <img
-                        src="https://www.ynly.cc/wp-content/uploads/2020/11/1605422790-caf2dc1.jpg-scale1.3-1024x768.jpg"
-                        alt=""
-                      />
-                      <div>
-                        <p>
-                          <span class="meta-time">2020-12-25</span>
-                          <span class="count">105 次浏览</span>
-                          <span class="meta-comment">0 条评论</span>
-                        </p>
-                        <h4>重庆到云南丽江大理香格里拉双飞5日游</h4>
-                        <p class="article-txt">
-                          重庆到云南丽江大理香格里拉双飞5日游 第1天 重庆-丽江
-                          丽江机场接机，之后安排入住酒店休息。
-                          如果您抵达丽江过早，可以自行前往丽江古城游览。
-                          致前往丽江朋友的一封欢迎信…
-                        </p>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img
-                        src="https://www.ynly.cc/wp-content/uploads/2020/11/1605422790-caf2dc1.jpg-scale1.3-1024x768.jpg"
-                        alt=""
-                      />
-                      <div>
-                        <p>
-                          <span class="meta-time">2020-12-25</span>
-                          <span class="count">105 次浏览</span>
-                          <span class="meta-comment">0 条评论</span>
-                        </p>
-                        <h4>重庆到云南丽江大理香格里拉双飞5日游</h4>
-                        <p class="article-txt">
-                          重庆到云南丽江大理香格里拉双飞5日游 第1天 重庆-丽江
-                          丽江机场接机，之后安排入住酒店休息。
-                          如果您抵达丽江过早，可以自行前往丽江古城游览。
-                          致前往丽江朋友的一封欢迎信…
-                        </p>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- my-article over -->
+              <!-- my-favorite over -->
 
-            <!-- my-favorite start -->
-            <div class="my-favorite" v-show="tab_i == 3">
-              <div class="common-title">
-                <h3>我的收藏</h3>
-              </div>
-              <div class="myfavorite-list">
-                <ul>
-                  <li>
-                    <a href="">
-                      <img
-                        src="https://www.ynly.cc/wp-content/uploads/2020/11/1605422790-caf2dc1.jpg-scale1.3-1024x768.jpg"
-                        alt=""
-                      />
+              <!-- comment start -->
+              <div class="comment" v-show="tab_i == 4">
+                <div class="common-title">
+                  <h3>我的评论</h3>
+                </div>
+                <div class="comment-list">
+                  <ul>
+                    <li v-for="(v, i) of myComment" :key="i">
+                      <p>{{ v.comment_content }}</p>
                       <div>
-                        <p>
-                          <span class="meta-time">2020-12-25</span>
-                          <span class="count">105 次浏览</span>
-                          <span class="meta-comment">0 条评论</span>
-                        </p>
-                        <h4>重庆到云南丽江大理香格里拉双飞5日游</h4>
-                        <p class="favorite-txt">
-                          重庆到云南丽江大理香格里拉双飞5日游 第1天 重庆-丽江
-                          丽江机场接机，之后安排入住酒店休息。
-                          如果您抵达丽江过早，可以自行前往丽江古城游览。
-                          致前往丽江朋友的一封欢迎信…
-                        </p>
+                        <span>{{
+                          new Date(v.created_at).toLocaleString()
+                        }}</span>
+                        <span
+                          >评论文章：<router-link
+                            :to="`/article_detail/${v.aid}`"
+                            >{{ v.title }}</router-link
+                          ></span
+                        >
                       </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img
-                        src="https://www.ynly.cc/wp-content/uploads/2020/11/1605422790-caf2dc1.jpg-scale1.3-1024x768.jpg"
-                        alt=""
-                      />
-                      <div>
-                        <p>
-                          <span class="meta-time">2020-12-25</span>
-                          <span class="count">105 次浏览</span>
-                          <span class="meta-comment">0 条评论</span>
-                        </p>
-                        <h4>重庆到云南丽江大理香格里拉双飞5日游</h4>
-                        <p class="favorite-txt">
-                          重庆到云南丽江大理香格里拉双飞5日游 第1天 重庆-丽江
-                          丽江机场接机，之后安排入住酒店休息。
-                          如果您抵达丽江过早，可以自行前往丽江古城游览。
-                          致前往丽江朋友的一封欢迎信…
-                        </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- comment over -->
+
+              <!-- userinfo start -->
+              <div class="userinfo" v-show="tab_i == 5">
+                <div class="common-title">
+                  <h3>账号信息</h3>
+                </div>
+                <div class="userinfo-box">
+                  <ul>
+                    <li>
+                      <div class="avatar">
+                        <img :src="`/img/ucenter/${avater}`" alt="" />
+                        <a href="">修改头像</a>
+                        <input
+                          type="file"
+                          accept=".jpg, .gif, .png"
+                          name="addPic"
+                        />
                       </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- my-favorite over -->
-
-            <!-- comment start -->
-            <div class="comment" v-show="tab_i == 4">
-              <div class="common-title">
-                <h3>我的评论</h3>
-              </div>
-              <div class="comment-list">
-                <ul>
-                  <li>
-                    <p>hi 我也很喜欢云南</p>
-                    <div>
-                      <span>2021-02-07 19:31:27</span>
-                      <span
-                        >评论文章：<a target="_blank" href=""
-                          >重庆到云南丽江大理香格里拉双飞5日游</a
-                        ></span
-                      >
-                    </div>
-                  </li>
-                  <li>
-                    <p>hi 我也很喜欢云南</p>
-                    <div>
-                      <span>2021-02-07 19:31:27</span>
-                      <span
-                        >评论文章：<a target="_blank" href=""
-                          >重庆到云南丽江大理香格里拉双飞5日游</a
-                        ></span
-                      >
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- comment over -->
-
-            <!-- userinfo start -->
-            <div class="userinfo" v-show="tab_i == 5">
-              <div class="common-title">
-                <h3>账号信息</h3>
-              </div>
-              <div class="userinfo-box">
-                <ul>
-                  <li>
-                    <div class="avatar">
-                      <img
-                        src="https://cn.gravatar.com/avatar/7e95f2ffd7c0005c325b48443a80b4c2?s=96"
-                        alt=""
-                      />
-                      <a href="">修改头像</a>
+                    </li>
+                    <li>
+                      <label class="">用户名</label>
                       <input
-                        type="file"
-                        accept=".jpg, .gif, .png"
-                        name="addPic"
+                        type="text"
+                        class=""
+                        name="username"
+                        v-model="username"
+                        placeholder="您的用户名"
                       />
-                    </div>
-                  </li>
-                  <li>
-                    <label class="">用户ID</label>
-                    <input
-                      type="text"
-                      class=""
-                      name="username"
-                      value=""
-                      placeholder="您的用户名"
-                    />
-                  </li>
-                  <li>
-                    <label class="">用户昵称</label>
-                    <input
-                      type="text"
-                      class=""
-                      name="username"
-                      value=""
-                      placeholder="您的昵称"
-                    />
-                  </li>
-                  <li>
-                    <label class="">邮箱</label>
-                    <input
-                      type="text"
-                      class=""
-                      name="username"
-                      value=""
-                      placeholder="您的邮箱"
-                    />
-                  </li>
-                  <li>
-                    <label class="">一句话简介</label>
-                    <textarea
-                      class=""
-                      placeholder="您的简介"
-                      name="description"
-                    ></textarea>
-                  </li>
-                  <li>
-                    <button type="submit">提交</button>
-                  </li>
-                </ul>
+                    </li>
+                    <li>
+                      <label class="">用户昵称</label>
+                      <input
+                        type="text"
+                        class=""
+                        name="nickname"
+                        v-model="nickname"
+                        placeholder="您的昵称"
+                      />
+                    </li>
+                    <li>
+                      <label class="">邮箱</label>
+                      <input
+                        type="text"
+                        class=""
+                        name="email"
+                        v-model="email"
+                        placeholder="您的邮箱"
+                      />
+                    </li>
+                    <li>
+                      <label class="">一句话简介</label>
+                      <textarea
+                        class=""
+                        placeholder="您的简介"
+                        name="description"
+                        v-model="intro"
+                      ></textarea>
+                    </li>
+                    <li>
+                      <button type="submit" @click="infoUpdate">提交</button>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- userinfo over -->
+              <!-- userinfo over -->
 
-            <!-- changepw start -->
-            <div class="changepw" v-show="tab_i == 6">
-              <div class="common-title">
-                <h3>账号信息</h3>
+              <!-- changepw start -->
+              <div class="changepw" v-show="tab_i == 6">
+                <div class="common-title">
+                  <h3>账号信息</h3>
+                </div>
+                <div class="changepw-box">
+                  <ul>
+                    <li>
+                      <label class="">输入新密码</label>
+                      <input
+                        type="text"
+                        class=""
+                        name="password"
+                        v-model="password"
+                        placeholder="请输入6位以上密码"
+                        @blur="checkPassword"
+                      />
+                    </li>
+                    <li>
+                      <label class="">确认新密码</label>
+                      <input
+                        type="text"
+                        class=""
+                        name="checkpassword"
+                        v-model="password2"
+                        placeholder=""
+                        @blur="checkConPassword"
+                      />
+                    </li>
+                    <li>
+                      <button type="submit" @click="handle">修改</button>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="changepw-box">
-                <ul>
-                  <li>
-                    <label class="">输入新密码</label>
-                    <input
-                      type="text"
-                      class=""
-                      name="username"
-                      value=""
-                      placeholder="请输入6位以上密码"
-                    />
-                  </li>
-                  <li>
-                    <label class="">重置新密码</label>
-                    <input
-                      type="text"
-                      class=""
-                      name="username"
-                      value=""
-                      placeholder=""
-                    />
-                  </li>
-                  <li>
-                    <button type="submit">修改</button>
-                  </li>
-                </ul>
-              </div>
+              <!-- changepw over -->
             </div>
-            <!-- changepw over -->
-          </div>
-        </el-col>
-      </el-row>
+          </el-col>
+        </el-row>
+      </div>
     </div>
+    <common-footer></common-footer>
   </div>
 </template>
 
@@ -364,25 +319,174 @@ export default {
       tab_i: 1, //选项卡参数
       editor: null, //富文本编辑器参数
       editorData: "",
+
+      //我的文章参数
+      myArticle: [],
+
+      //我的收藏参数
+      myFavorite: [],
+
+      //我的评论参数
+      myComment: [],
+
+      //个人信息参数
+      username: "",
+      email: "",
+      nickname: "",
+      intro: "",
+      avater: "",
+
+      //修改个人密码参数
+      password: "",
+      password2: "",
     };
   },
   methods: {
     tab(i) {
       this.tab_i = i;
     },
+    logout() {
+      console.log(this.user);
+      window.sessionStorage.removeItem("user");
+      this.$router.push("/");
+      this.$router.go(0);
+    },
+
+    // 发送HTTP请求以更新我的信息数据
+    infoUpdate() {
+      let obj = {
+        uid: this.$store.state.user.uid,
+        uname: this.username,
+        email: this.email,
+        nickname: this.nickname,
+        intro: this.intro,
+      };
+
+      this.axios
+        .post("/ucenter/updateUserinfo", this.qs.stringify(obj))
+        .then((res) => {
+          console.log(res);
+        });
+    },
+
+    //验证密码是否正确
+    checkPassword() {
+      let passwordRegExp = /^\w{6,20}$/;
+      if (passwordRegExp.test(this.password)) {
+        return true;
+      } else {
+        //短消息提示框
+        this.$alert("", "密码格式错误", {
+          confirmButtonText: "确定",
+          type: "error",
+          center: true,
+        });
+        return false;
+      }
+    },
+    checkConPassword() {
+      if (this.password == this.password2) {
+        return true;
+      } else {
+        //短消息提示框
+        this.$alert("", "输入密码不一致", {
+          confirmButtonText: "确定",
+          type: "error",
+          center: true,
+        });
+        //alert('输入密码不一致');
+        return false;
+      }
+    },
+
+    // 用户注册处理函数
+    handle() {
+      console.log(1);
+      let obj = {
+        uid: this.$store.state.user.uid,
+        upwd: this.password,
+      };
+      if (this.checkPassword() && this.checkConPassword()) {
+        this.axios
+          .post("/ucenter/changePassword", this.qs.stringify(obj))
+          .then((res) => {
+            console.log(res);
+          });
+      }else{
+        //短消息提示框
+        this.$alert("", "密码格式错误", {
+          confirmButtonText: "确定",
+          type: "error",
+          center: true,
+        });
+      }
+    },
   },
   mounted() {
+    // 创建富文本编辑器
+
     const editor = new wangEditor(`#editor1`);
 
     // 配置 onchange 回调函数，将数据同步到 vue 中
     editor.config.onchange = (newHtml) => {
       this.editorData = newHtml;
     };
-
     // 创建编辑器
     editor.create();
-
     this.editor = editor;
+
+    // 发送HTTP请求以获取我的文章数据
+    this.axios
+      .get("/ucenter/myArticle", {
+        params: {
+          uid: this.$store.state.user.uid,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.myArticle = res.data;
+      });
+
+    // 发送HTTP请求以获取我的收藏文章数据
+    this.axios
+      .get("/ucenter/myFavorite", {
+        params: {
+          uid: this.$store.state.user.uid,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.myFavorite = res.data;
+      });
+
+    // 发送HTTP请求以获取我的评论数据
+    this.axios
+      .get("/ucenter/myComment", {
+        params: {
+          uid: this.$store.state.user.uid,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.myComment = res.data;
+      });
+
+    // 发送HTTP请求以获取我的信息数据
+    this.axios
+      .get("/ucenter/userinfo", {
+        params: {
+          uid: this.$store.state.user.uid,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.username = res.data.rs[0].uname;
+        this.nickname = res.data.rs[0].nickname;
+        this.avater = res.data.rs[0].avater;
+        this.intro = res.data.rs[0].intro;
+        this.email = res.data.rs[0].email;
+        console.log(res, this.username, this.nickname);
+      });
   },
   beforeDestroy() {
     // 调用销毁 API 对当前编辑器实例进行销毁
@@ -477,6 +581,7 @@ export default {
 
 .ucenter-main .user-nav > ul li a {
   color: #777;
+  cursor: pointer;
 }
 
 .ucenter-main .user-nav > ul li a.active::before {
@@ -534,18 +639,20 @@ export default {
 
 .ucenter-main .article-post #editor1 {
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .ucenter-main .article-post .article-title {
-    appearance: none;
-    border-bottom: 1px solid #e6e6e6;
-    color: #1a1a1a;
-    display: block;
-    height: 40px;
-    line-height: 38px;
-    margin-bottom: 10px;
-    transition: border-color cubic-bezier(.4,.01,.165,.99);
-    width: 100%;
+  appearance: none;
+  border-bottom: 1px solid #e6e6e6;
+  color: #1a1a1a;
+  display: block;
+  height: 40px;
+  line-height: 38px;
+  margin-bottom: 10px;
+  transition: border-color cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  width: 100%;
 }
 
 .ucenter-main .article-post .category select {
@@ -638,7 +745,7 @@ export default {
 }
 /* my-article over*/
 
-/* my-article start*/
+/* my-favorite start*/
 .ucenter-main .myfavorite-list li {
   border-bottom: 1px solid #ddd;
   padding: 20px 0;
@@ -699,7 +806,7 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-/* my-article over*/
+/* my-favorite over*/
 
 /* comment start */
 .ucenter-main .comment-list ul li {

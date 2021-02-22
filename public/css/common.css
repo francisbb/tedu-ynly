@@ -182,9 +182,15 @@ input[type=search]::-ms-clear {
 }
 
 .nav-tools div {
-    flex: 0 0 50%;
+    flex: 1 1;
     text-align: center;
 }
+
+.nav-tools div:nth-child(2) {
+    flex: 1 0 50%;
+    text-align: center;
+}
+
 
 .nav-tools div:nth-child(1) a {
     font-size: 18px;

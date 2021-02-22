@@ -8,7 +8,7 @@ module.exports = {
             '/api': { // '/'是代理标识，用于告诉服务器，url前面是/的就是使用代理的
                 // target: "http://212.64.79.16:88", //目标地址，一般是指后台服务器地址
                 // target:'http://172.20.10.8:8000',
-                target:'http://192.168.50.133:8000',
+                target:'http://127.0.0.1:8090',
                 changeOrigin: true, //是否跨域
                 ws:true,
                 pathRewrite: { // pathRewrite 的作用是把实际Request Url中的'/api'用""代替

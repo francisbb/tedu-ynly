@@ -39,13 +39,13 @@
               <h5 class="footer-title">网站导航</h5>
               <ul class="footer-list">
                 <li>
-                  <a href="yngl.html">云南旅游攻略</a>
+                  <a href="">云南旅游攻略</a>
                 </li>
                 <li>
-                  <a href="ynjd.html">云南旅游景点</a>
+                  <a href="">云南旅游景点</a>
                 </li>
                 <li>
-                  <a href="ynxl.html">云南旅游线路</a>
+                  <a href="">云南旅游线路</a>
                 </li>
               </ul>
             </el-col>
@@ -53,7 +53,7 @@
               <h5 class="footer-title">合作事项</h5>
               <ul class="footer-list">
                 <li>
-                  <a href="shangwu.html">商务合作</a>
+                  <a href="">商务合作</a>
                 </li>
               </ul>
             </el-col>
@@ -61,16 +61,16 @@
               <h5 class="footer-title">网站条款</h5>
                 <ul class="footer-list">
                   <li>
-                    <a href="mianze.html">免责声明</a>
+                    <a href="">免责声明</a>
                   </li>
                   <li>
-                    <a href="banquan.html">版权声明</a>
+                    <a href="">版权声明</a>
                   </li>
                   <li>
-                    <a href="xieyi.html">用户协议</a>
+                    <a href="">用户协议</a>
                   </li>
                   <li>
-                    <a href="privacy-policy.html">隐私政策</a>
+                    <a href="">隐私政策</a>
                   </li>
                 </ul>
             </el-col>
@@ -80,14 +80,14 @@
       <div class="social-bar">
         <li>友情链接：</li>
         <li><a href="" target="_blank">云南旅游</a></li>
-        <li><a href="ynjd.html" target="_blank">云南旅游必去的景点</a></li>
-        <li><a href="yngl.html" target="_blank">云南旅游攻略</a></li>
+        <li><a href="" target="_blank">云南旅游必去的景点</a></li>
+        <li><a href="" target="_blank">云南旅游攻略</a></li>
         <li><a href="" target="_blank">云南旅游景点</a></li>
         <li><a href="javascript:;" target="_blank">十堰问答网</a></li>
         <li><a href="javascript:;" target="_blank">南京公司代办</a></li>
         <li><a href="javascript:;" target="_blank">南京外资公司注册</a></li>
         <li><a href="javascript:;" target="_blank">咸阳新闻网</a></li>
-        <li><a href="dali.html" target="_blank">大理旅游景点</a></li>
+        <li><a href="">大理旅游景点</a></li>
         <li><a href="javascript:;" target="_blank">安庆旅游</a></li>
         <li><a href="javascript:;" target="_blank">张家界生活网</a></li>
         <li><a href="javascript:;" target="_blank">竞价托管</a></li>
@@ -99,6 +99,26 @@
         <li><a href="javascript:;" target="_blank">郑州旅游网</a></li>
       </div>
     </div>
+    <el-backtop
+        :bottom="100"
+      >
+        <div
+          style="
+             {
+              height: 100%;
+              width: 100%;
+              background-color: #111;
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+              text-align: center;
+              line-height: 40px;
+              color: #fff;
+              border-radius:4px;
+            }
+          "
+        >
+          <i class="iconfont icon-shang"></i>
+        </div>
+      </el-backtop>
   </footer>
 </template>
 

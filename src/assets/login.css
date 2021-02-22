@@ -1,0 +1,11 @@
+.el-link.el-link--info{
+    color: #717171 !important;
+}
+.el-input__inner{
+    background-color: #eff0f2 !important;
+    border-radius: 3px !important;
+    outline: 0 !important;
+    border: 0 !important;
+}
+
+
